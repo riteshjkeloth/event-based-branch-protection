@@ -22,8 +22,10 @@ This solution listens to Github repo webhook events and creates branch protectio
       1. Can be generated using `ruby -rsecurerandom -e 'puts SecureRandom.hex(20)`
    4. Set the secret as a environment variable
       `e.g. export GITHUB_WEBHOOK_TOKEN=fa98s7df98asf98asf`
-5. Start the web server \
+5. set FLASK_APP environment variable\
+    `export FLASK_APP=branch-protection.py`
+6. Start the web server \
    `flask run --host localhost --port 5678`
-6. Create a repository in the organization
+7. Create a repository in the organization
    1. Webhook posts a REST request towards webserver
    2. This inturn creates a branch protection rule and issue for the repo. 
